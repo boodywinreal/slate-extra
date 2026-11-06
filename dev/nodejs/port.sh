@@ -18,6 +18,12 @@ export LD_LIBRARY_PATH=/usr/lib64:/usr/lib
 
 ./configure \
   --prefix=/usr \
-  --shared-*
+  --shared-openssl \
+  --shared-zlib \
+  --shared-libuv \
+  --shared-brotli \
+  --shared-cares \
+  --shared-nghttp2 \
+  --with-intl=system-icu
 make -j"$(nproc)"
 make DESTDIR="$DESTDIR" install
